@@ -33,11 +33,11 @@ export class News extends Component {
         let url = `http://localhost:5000/api/news?country=${this.props.country}&page=1&pageSize=${this.props.pageSize}&category=${this.props.category}`;
         let data = await fetch(url);
         let parsedData = await data.json();
-        console.log("API Response:", parsedData);  // 👈 add this
+        console.log("API Response:", parsedData);
         this.setState({
             articles: parsedData.articles || [],
             totalArticles: parsedData.totalResults || 0,
-            hasMore: (parsedData.articles || []).length > 0  // 👈 also add this
+            hasMore: (parsedData.articles || []).length > 0
         });
     }
 
@@ -69,7 +69,7 @@ export class News extends Component {
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMore}
-                    hasMore={this.state.hasMore}     //👈 use state boolean instead 
+                    hasMore={this.state.hasMore}
                     endMessage={<p style={{ textAlign: 'center' }}>All articles loaded.</p>}
                     loader={<Spinner />}
                     style={{ overflow: "visible" }}
