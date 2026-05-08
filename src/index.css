@@ -22,7 +22,7 @@ span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-da
 
 .badge-position {
     left: 62%;
-    padding: 0 8px;
+    padding: 0 4px;
 }
 
 .cardd {
@@ -35,4 +35,4 @@ span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-da
 
 /* body {
     overflow-x: hidden;
-    /* prevents Bootstrap row bleed */
+    /* 👈 prevents Bootstrap row bleed */
