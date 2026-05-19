@@ -1,5 +1,40 @@
+/* ── Theme Variables ───────────────────────────────────── */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #121212;
+    --text-muted: #6c757d;
+    --border-color: #e9ecef;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    --badge-bg: #f1f3f5;
+    --badge-color: #495057;
+}
+
+body.dark {
+    --bg-primary: #121212;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #212529;
+    --text-primary: #ffffff;
+    --text-muted: #adb5bd;
+    --border-color: #2e3338;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --badge-bg: #2e3338;
+    --badge-color: #dee2e6;
+    background-color: #121212 !important;
+    color: #ffffff;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ── Navbar ────────────────────────────────────────────── */
 .navbar-light .navbar-brand {
-    color: white
+    color: white;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -16,10 +51,12 @@
     color: rgba(227, 220, 220, 0.7);
 }
 
-span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger {
-    z-index: 1;
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: rgba(227, 220, 220, 0.7);
 }
 
+/* ── News Cards ────────────────────────────────────────── */
 .badge-position {
     left: 62%;
     padding: 0 4px;
@@ -33,6 +70,137 @@ span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-da
     padding: 4px;
 }
 
-/* body {
-    overflow-x: hidden;
-    /* 👈 prevents Bootstrap row bleed */
+body.dark .card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+
+body.dark .card-title,
+body.dark .card-text {
+    color: var(--text-primary);
+}
+
+body.dark .text-muted-themed {
+    color: var(--text-muted);
+}
+
+.btn.btn-themed {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+}
+
+/* ── About Page ────────────────────────────────────────── */
+.about-page {
+    min-height: 100vh;
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.about-hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.about-accent {
+    color: #e63946;
+}
+
+.about-hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.about-divider {
+    width: 60px;
+    height: 4px;
+    background-color: #e63946;
+    margin: 32px auto;
+    border-radius: 2px;
+}
+
+.about-section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.about-muted {
+    color: var(--text-muted);
+}
+
+.about-card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 12px;
+    padding: 32px;
+    height: 100%;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.about-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 0;
+}
+
+.about-category-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 4px;
+    background-color: var(--badge-bg);
+    color: var(--badge-color);
+}
+
+.about-tech-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 4px;
+    background-color: #e63946;
+    color: #ffffff;
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ── News Page ─────────────────────────────────────────── */
+.news-heading {
+    margin: 90px 0px 30px 0px;
+}
